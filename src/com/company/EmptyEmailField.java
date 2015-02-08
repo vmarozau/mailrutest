@@ -86,8 +86,8 @@ public class EmptyEmailField {
 
         int size = textFieldsList.size();
 
-        textFieldsList.get(0).sendKeys("killesk@mail.ru");
-        textFieldsList.get(1).sendKeys("Static-x108");
+        textFieldsList.get(0).sendKeys("mairutest@mail.ru");
+        textFieldsList.get(1).sendKeys("MailRuTest");
 
         Assert.assertEquals(LoginButton.isEnabled(),true);
         //driver.findElements(By.xpath("android.widget.Button")).get(1).click();

@@ -1,9 +1,7 @@
 package com.company;
 
-import org.openqa.selenium.WebDriver;
+import com.company.pages.LoginPage;
 import org.testng.annotations.Test;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Vyacheslav on 04.10.2014.

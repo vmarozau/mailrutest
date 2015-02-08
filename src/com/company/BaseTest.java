@@ -1,5 +1,7 @@
 package com.company;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -16,7 +18,7 @@ import java.net.URL;
  */
 public class BaseTest {
 
-    public static WebDriver driver;
+    public static AppiumDriver driver;
 
     @BeforeTest
     public void setUp() throws Exception {
@@ -37,7 +39,8 @@ public class BaseTest {
         capabilities.setCapability("app", app.getAbsolutePath());
         //capabilities.setCapability("app-package", "{app package name}");  //my case com.gorillalogic.monkeytalk.demo1
         // capabilities.setCapability("app-activity", ".{main activity class}");  //my case RootActivity
-        driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+        //driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+        driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
         // platformName: 'Android',
 
         //return driver;

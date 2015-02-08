@@ -68,8 +68,8 @@ public class Swipetry {
 
         int size = textFieldsList.size();
 
-        textFieldsList.get(0).sendKeys("killesk@mail.ru");
-        textFieldsList.get(1).sendKeys("Static-x108");
+        textFieldsList.get(0).sendKeys("mairutest@mail.ru");
+        textFieldsList.get(1).sendKeys("MailRuTest");
         //driver.findElements(By.xpath("android.widget.Button")).get(1).click();
         driver.findElement(By.className("android.widget.Button")).click();
 
