@@ -15,6 +15,7 @@ public class IncorrectPassword extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.fillEmailField("mairutest@mail.ru").fillPasswordField("testtest").pressLoginButton();
         Assert.assertEquals(loginPage.getErrorMessageText(),"Authintification fail. Check login and password and try again.");
+
                 //Authintification fail. Check login and password and try again.
 
 

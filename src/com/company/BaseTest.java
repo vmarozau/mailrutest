@@ -2,25 +2,28 @@ package com.company;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.net.URL;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Vyacheslav on 04.10.2014.
  */
 public class BaseTest {
 
-    public static AppiumDriver driver;
+    protected AppiumDriver driver;
+    //webdriver
 
-    @BeforeTest
+    @BeforeSuite
     public void setUp() throws Exception {
 
         // set up appium
@@ -41,13 +44,14 @@ public class BaseTest {
         // capabilities.setCapability("app-activity", ".{main activity class}");  //my case RootActivity
         //driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+
         // platformName: 'Android',
 
         //return driver;
     }
 
 
-    @AfterTest
+    @AfterSuite
     public void tearDown() throws Exception {
         driver.quit();
     }

@@ -1,5 +1,7 @@
 package com.company.pages;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,13 +14,13 @@ import java.util.concurrent.TimeUnit;
  */
 public class LoginPage {
 
-    private WebDriver driver;
+    private AppiumDriver driver;
 
    // @FindBy (className = "android.widget.EditText")
    // protected WebElement emailField;
 
 
-    public LoginPage(WebDriver driver)
+    public LoginPage(AppiumDriver driver)
     {
         this.driver = driver;
         //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
