@@ -18,7 +18,7 @@ public class AddPhotoPage {
         this.driver = driver;
     }
 
-    public GridPage selectPhoto () {
+    public void selectPhoto () {
         List<WebElement> cells = driver.findElements(By.className("android.widget.RelativeLayout"));
         //WebElement cells = driver.findElement(By.className("android.widget.RelativeLayout"));
         cells.get(1).click();
