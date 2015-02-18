@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by mac-248 on 2/4/15.
  */
-public class Testios {
+public class TestAndroidOnMac {
 
     private WebDriver driver;
 
@@ -34,9 +34,6 @@ public class Testios {
         File app = new File(appDir, "mailrucloud.apk"); //my case “demo1.apk”
         DesiredCapabilities capabilities = new DesiredCapabilities();
         //capabilities.setCapability("device", "Android");
-        capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
-        //capabilities.setCapability(CapabilityType.VERSION, "4.4");
-        // capabilities.setCapability(CapabilityType.PLATFORM, "Android");
 
 
         capabilities.setCapability("browserName", "");
@@ -68,8 +65,8 @@ public class Testios {
 
         int size = textFieldsList.size();
 
-        textFieldsList.get(0).sendKeys("killesk@mail.ru");
-        textFieldsList.get(1).sendKeys("Static-x108");
+        textFieldsList.get(0).sendKeys("mailrutest@mail.ru");
+        textFieldsList.get(1).sendKeys("MailRuTest");
 
         Assert.assertEquals(LoginButton.isEnabled(),true);
 
