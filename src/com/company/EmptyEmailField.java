@@ -1,6 +1,6 @@
 package com.company;
 
-import org.apache.commons.lang3.ObjectUtils;
+//import org.apache.commons.lang3.ObjectUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,7 +48,10 @@ public class EmptyEmailField {
     public void setUp() throws Exception {
 
         // set up appium
-        File appDir = new File("E://Dev");
+        //For Mac
+        File appDir = new File("/Users/mac-248/Downloads");
+        //For Windows
+        //File appDir = new File("E:/Dev")
         File app = new File(appDir, "mailrucloud.apk"); //my case “demo1.apk”
         DesiredCapabilities capabilities = new DesiredCapabilities();
         //capabilities.setCapability("device", "Android");
@@ -64,7 +67,7 @@ public class EmptyEmailField {
         capabilities.setCapability("app", app.getAbsolutePath());
         //capabilities.setCapability("app-package", "{app package name}");  //my case com.gorillalogic.monkeytalk.demo1
         // capabilities.setCapability("app-activity", ".{main activity class}");  //my case RootActivity
-        driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+        driver = new RemoteWebDriver(new URL("http://127.0.0.1:5955/wd/hub"), capabilities);
         // platformName: 'Android',
 
     }
