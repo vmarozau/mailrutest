@@ -14,23 +14,24 @@ import java.util.concurrent.TimeUnit;
  */
 public class LoginPage {
 
-    private AppiumDriver driver;
+    //private  AppiumDriver driver;
+    // private static AppiumDriver driver;
 
    // @FindBy (className = "android.widget.EditText")
    // protected WebElement emailField;
 
 
-    public LoginPage(AppiumDriver driver)
-    {
-        this.driver = driver;
-        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-    }
+//    public LoginPage(AppiumDriver driver)
+//    {
+//        this.driver = driver;
+//        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//    }
    // emailField = driver.findElement(By.id("login"));
 
     //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 //    public List<WebElement> textFieldsList = driver.findElements(By.className("android.widget.EditText"));
     //public WebElement emailField = driver.findElement()
-    public LoginPage fillEmailField (String email)
+    public static void fillEmailField (String email, WebDriver driver)
     {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
@@ -39,14 +40,14 @@ public class LoginPage {
 
        textFieldsList.get(0).sendKeys(email);
         //emailField.sendKeys(email);
-        return this;
+        //return this;
     }
-    public LoginPage fillPasswordField (String password) {
+    public static void fillPasswordField (String password, WebDriver driver) {
         List<WebElement> textFieldsList = driver.findElements(By.className("android.widget.EditText"));
         textFieldsList.get(1).sendKeys(password);
-        return this;
+        //return this;
     }
-    public void pressLoginButton () {
+    public static void pressLoginButton (WebDriver driver) {
         List<WebElement> buttonsList = driver.findElements(By.className("android.widget.Button"));
         buttonsList.get(1).click();
         //driver.findElement(By.className("android.widget.Button")).click();
@@ -54,13 +55,13 @@ public class LoginPage {
 
     }
 
-    public boolean isButtonEnabled() {
+    public static boolean isButtonEnabled(WebDriver driver) {
         WebElement loginbutton = driver.findElement(By.className("android.widget.Button"));
 
         return loginbutton.isEnabled();
     }
 
-    public String getErrorMessageText() {
+    public static String getErrorMessageText(WebDriver driver) {
 //        WebElement message = driver.findElement(By.id("message"));
 //        return message.getText();
 

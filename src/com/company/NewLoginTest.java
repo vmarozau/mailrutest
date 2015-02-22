@@ -13,10 +13,10 @@ public class NewLoginTest extends BaseTest {
     @Test
     public void loginTest(){
         //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        LoginPage loginPage = new LoginPage(driver);
+       // LoginPage loginPage = new LoginPage(driver);
 
         //try {
-            loginPage.fillEmailField("blablablatest2@email.com");
+            //loginPage.fillEmailField("blablablatest2@email.com");
        // }
         //catch (Exception e) {
         //    e.printStackTrace();

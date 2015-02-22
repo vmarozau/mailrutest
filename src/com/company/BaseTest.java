@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class BaseTest {
 
-    protected AppiumDriver driver;
+    public AppiumDriver driver;
     //webdriver
 
     @BeforeSuite
