@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 /**
  * Created by Vyacheslav on 12.10.2014.
  */
-public class TestAlreadyHaveAnAccount extends BaseTest {
+public class TestAlreadyHaveAnAccount extends CommonBaseTest {
 
     @Test
     public void alreadyHaveAnAccount ()

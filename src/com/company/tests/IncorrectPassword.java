@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
  */
 public class IncorrectPassword extends BaseTest {
 
-    @Test
+    @Test(dataProvider = "data-provider")
     public void failLoginTest ()
     {
         //LoginPage loginPage = new LoginPage(driver);
@@ -18,7 +18,7 @@ public class IncorrectPassword extends BaseTest {
 
         LoginPage.fillEmailField("mairutest@mail.ru", driver);
         //
-        LoginPage.fillPasswordField("testtest", driver);
+        LoginPage.fillPasswordField("password", driver);
         LoginPage.pressLoginButton(driver);
 
         Assert.assertEquals(LoginPage.getErrorMessageText(driver),"Authintification fail. Check login and password and try again.");

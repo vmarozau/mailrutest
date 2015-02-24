@@ -6,11 +6,14 @@ package com.company.tests;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+
 public class LoginDataProvider {
 
 
         @DataProvider(name = "data-provider")
         public Object[][] dataProviderMethod() {
+
+
             return new Object[][]{{"data one"}, {"data two"}};
         }
 
