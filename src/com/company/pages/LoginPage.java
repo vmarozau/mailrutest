@@ -49,7 +49,7 @@ public class LoginPage {
     }
     public static void pressLoginButton (WebDriver driver) {
         List<WebElement> buttonsList = driver.findElements(By.className("android.widget.Button"));
-        buttonsList.get(1).click();
+        buttonsList.get(0).click();
         //driver.findElement(By.className("android.widget.Button")).click();
 
 
