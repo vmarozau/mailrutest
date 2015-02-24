@@ -1,5 +1,6 @@
 package com.company.pages.IOSPages;
 
+import com.company.pages.StartPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by mac-248 on 2/24/15.
  */
-public class IOSStartPage {
+public class IOSStartPage extends StartPage {
 
 
     //    public static void fillEmailField (String email, WebDriver driver)
@@ -29,7 +30,8 @@ public class IOSStartPage {
 //        textFieldsList.get(1).sendKeys(password);
 //        //return this;
 //    }
-    public static void pressAlreadyHaveAnAccountButton(WebDriver driver) {
+    @Override
+    public void pressAlreadyHaveAnAccountButton(WebDriver driver) {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         WebElement alreadyHaveAnAccountButton = driver.findElement(By.name("Already have an account? Log in"));

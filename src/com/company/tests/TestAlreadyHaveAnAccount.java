@@ -6,6 +6,8 @@ import com.company.pages.AndroidPages.AndroidLoginPage;
 import com.company.pages.IOSPages.IOSLoginPage;
 import com.company.pages.IOSPages.IOSStartPage;
 import com.company.pages.LoginPage;
+import com.company.pages.LoginPageWiki;
+import com.company.pages.StartPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -19,11 +21,11 @@ public class TestAlreadyHaveAnAccount extends CommonBaseTest {
     {
 
 
-        IOSStartPage.pressAlreadyHaveAnAccountButton(driver);
+        StartPage.pressAlreadyHaveAnAccountButton(driver);
 
 
         //Assert.assertEquals(IOSLoginPage.isLoginTextPresent(driver), true);
-        Assert.assertEquals(AndroidLoginPage.isLoginTextPresent(driver), true);
+        Assert.assertEquals(LoginPageWiki.isLoginTextPresent(driver), true);
 
 
 

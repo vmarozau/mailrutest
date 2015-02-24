@@ -1,5 +1,6 @@
 package com.company.tests;
 
+import com.company.DeviceSwitcher;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
@@ -20,14 +21,15 @@ public class CommonBaseTest {
     public AppiumDriver driver;
     //webdriver
     private String serverURL = "http://127.0.0.1:4723/wd/hub";
+    DeviceSwitcher switcher;
 
     @BeforeSuite
     public void setUp() throws Exception {
 
         //temporarily
 
-        int device = 1; //0 - iOS; 1 - Android
-        switch (device){
+       // int device = 1; //0 - iOS; 1 - Android
+        switch (switcher.getDevice()){
             case 0:
 
                 iOSSetup();
