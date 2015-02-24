@@ -1,6 +1,7 @@
 package com.company.pages.IOSPages;
 
 import com.company.pages.StartPage;
+import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +14,10 @@ import java.util.concurrent.TimeUnit;
  */
 public class IOSStartPage extends StartPage {
 
-
+    public IOSStartPage(AppiumDriver driver)
+    {
+        super(driver);
+    }
     //    public static void fillEmailField (String email, WebDriver driver)
 //    {
 //        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

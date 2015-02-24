@@ -21,15 +21,16 @@ public class CommonBaseTest {
     public AppiumDriver driver;
     //webdriver
     private String serverURL = "http://127.0.0.1:4723/wd/hub";
-    DeviceSwitcher switcher;
+    public DeviceSwitcher switcher;
 
     @BeforeSuite
     public void setUp() throws Exception {
 
         //temporarily
 
-       // int device = 1; //0 - iOS; 1 - Android
-        switch (switcher.getDevice()){
+        int device = 1; //0 - iOS; 1 - Android
+        //switch (switcher.getDevice()){
+        switch (device){
             case 0:
 
                 iOSSetup();

@@ -6,7 +6,7 @@ package com.company;
 public class DeviceSwitcher {
 
     // to add some logic to provide device
-    private int device = 1;
+    public int device = 1;
 
     public int getDevice(){
         return device;

@@ -8,6 +8,8 @@ import com.company.pages.IOSPages.IOSStartPage;
 import com.company.pages.LoginPage;
 import com.company.pages.LoginPageWiki;
 import com.company.pages.StartPage;
+import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,16 +18,19 @@ import org.testng.annotations.Test;
  */
 public class TestAlreadyHaveAnAccount extends CommonBaseTest {
 
+    public StartPage startPage;
+
+    public LoginPageWiki loginPageWiki;
     @Test
     public void alreadyHaveAnAccount ()
     {
 
 
-        StartPage.pressAlreadyHaveAnAccountButton(driver);
+        startPage.pressAlreadyHaveAnAccountButton(driver);
 
 
         //Assert.assertEquals(IOSLoginPage.isLoginTextPresent(driver), true);
-        Assert.assertEquals(LoginPageWiki.isLoginTextPresent(driver), true);
+        Assert.assertEquals(loginPageWiki.isLoginTextPresent(driver), true);
 
 
 

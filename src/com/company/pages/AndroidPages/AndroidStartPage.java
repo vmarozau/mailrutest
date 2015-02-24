@@ -1,5 +1,7 @@
 package com.company.pages.AndroidPages;
 
+import com.company.pages.StartPage;
+import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,9 +11,13 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by mac-248 on 2/24/15.
  */
-public class AndroidStartPage {
+public class AndroidStartPage extends StartPage{
 
-
+    public AndroidStartPage(AppiumDriver driver)
+    {
+        super(driver);
+    }
+//public AndroidStartPage
     //    public static void fillEmailField (String email, WebDriver driver)
 //    {
 //        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -28,7 +34,8 @@ public class AndroidStartPage {
 //        textFieldsList.get(1).sendKeys(password);
 //        //return this;
 //    }
-    public static void pressAlreadyHaveAnAccountButton(WebDriver driver) {
+    @Override
+    public void pressAlreadyHaveAnAccountButton(WebDriver driver) {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         WebElement alreadyHaveAnAccountButton = driver.findElement(By.name("Already have an account? Log in"));
