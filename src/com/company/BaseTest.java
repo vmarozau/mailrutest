@@ -31,7 +31,7 @@ public class BaseTest {
         //File appDir = new File("E://Dev");
         File appDir = new File("/Users/mac-248/Downloads");
 
-        File app = new File(appDir, "mailrucloud.apk");
+        File app = new File(appDir, "wikipedia2.apk");
         //File app = new File(appDir, "wikipedia.app");
         //File app = new File(appDir, "wikipedia.ipa");
 
