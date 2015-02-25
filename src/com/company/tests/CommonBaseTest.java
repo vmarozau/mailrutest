@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeSuite;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Vyacheslav on 04.10.2014.
@@ -20,7 +21,7 @@ public class CommonBaseTest {
     public AppiumDriver driver;
     //webdriver
     private String serverURL = "http://127.0.0.1:4723/wd/hub";
-
+    //private String serverURL = "http://127.0.0.1:4723/wd/hub";
     @BeforeSuite
     public void setUp() throws Exception {
 
@@ -56,6 +57,7 @@ public class CommonBaseTest {
         capabilities.setCapability("app", app.getAbsolutePath());
 
         driver = new IOSDriver(new URL(serverURL), capabilities);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
     public void androidSetup() throws MalformedURLException {
@@ -71,6 +73,7 @@ public class CommonBaseTest {
         capabilities.setCapability("deviceName", "Galaxy S4");
         capabilities.setCapability("app", app.getAbsolutePath());
         driver = new AndroidDriver(new URL(serverURL), capabilities);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
 

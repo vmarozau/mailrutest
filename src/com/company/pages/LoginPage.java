@@ -31,6 +31,11 @@ public class LoginPage {
     //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 //    public List<WebElement> textFieldsList = driver.findElements(By.className("android.widget.EditText"));
     //public WebElement emailField = driver.findElement()
+
+    public static void pressCreateAccountButton (WebDriver driver)
+    {
+
+    }
     public static void fillEmailField (String email, WebDriver driver)
     {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

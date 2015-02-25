@@ -1,5 +1,6 @@
 package com.company.pages.AndroidPages;
 
+import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,6 +37,10 @@ public class AndroidStartPage {
         alreadyHaveAnAccountButton.click();
         //driver.findElement(By.className("android.widget.Button")).click();
 
+
+    }
+
+    public static void pressCreateAccountButton(WebDriver driver) {
 
     }
 
