@@ -1,9 +1,7 @@
 package com.company.tests;
 
-import com.company.pages.FeaturedArticle;
+import com.company.pages.FeaturedArticlePage;
 import com.company.pages.StartPage;
-import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,8 +13,8 @@ public class SwipeLeftMenu extends CommonBaseTest{
     @Test
     public void leftMenuElementsAfterSwipe() throws InterruptedException {
         StartPage.pressSkip(driver);
-        FeaturedArticle.swipeToOpenLeftMenu(driver);
-        Assert.assertTrue(FeaturedArticle.menuItemsArePresent(driver));
+        FeaturedArticlePage.swipeToOpenLeftMenu(driver);
+        Assert.assertTrue(FeaturedArticlePage.menuItemsArePresent(driver));
 
     }
 }

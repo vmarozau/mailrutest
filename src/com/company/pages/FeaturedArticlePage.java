@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Vyacheslav on 25.02.2015.
  */
-public class FeaturedArticle {
+public class FeaturedArticlePage {
 
     public static boolean isWebViewPresent(WebDriver driver)
     {

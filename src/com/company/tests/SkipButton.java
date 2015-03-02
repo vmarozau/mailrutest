@@ -1,7 +1,6 @@
 package com.company.tests;
 
-import com.company.BaseTest;
-import com.company.pages.FeaturedArticle;
+import com.company.pages.FeaturedArticlePage;
 import com.company.pages.StartPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,6 +14,6 @@ public class SkipButton extends CommonBaseTest {
     public void skipButtonShouldOpenWebView(){
 
         StartPage.pressSkip(driver);
-        Assert.assertTrue(FeaturedArticle.isWebViewPresent(driver));
+        Assert.assertTrue(FeaturedArticlePage.isWebViewPresent(driver));
 }
 }

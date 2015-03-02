@@ -1,6 +1,6 @@
 package com.company.tests;
 
-import com.company.BaseTest;
+
 import com.company.BaseTestIOS;
 import com.company.pages.AndroidPages.AndroidLoginPage;
 import com.company.pages.IOSPages.IOSLoginPage;

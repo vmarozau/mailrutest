@@ -6,7 +6,9 @@ import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -22,6 +24,8 @@ public class CommonBaseTest {
     //webdriver
     private String serverURL = "http://127.0.0.1:4723/wd/hub";
     //private String serverURL = "http://127.0.0.1:4723/wd/hub";
+
+    //@BeforeTest
     @BeforeSuite
     public void setUp() throws Exception {
 
@@ -81,4 +85,12 @@ public class CommonBaseTest {
     public void tearDown() throws Exception {
         driver.quit();
     }
+
+//    //to test app kill after data provider iteration
+//    @AfterTest
+//    public void killapp() throws Exception {
+//        System.out.println("system out print ln worked");
+//        driver.closeApp();
+//    }
+
 }//
