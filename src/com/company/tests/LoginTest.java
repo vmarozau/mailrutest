@@ -26,6 +26,9 @@ public class LoginTest extends CommonBaseTest {
     }
 
     @Test(dataProvider = "login-data-provider", dataProviderClass = LoginDataProvider.class)
+
+    //*** won't work for now because of google issue https://github.com/appium/appium/issues/968
+
     public void loginTest (String login, String password, String expectedMessage)
     {
         //LoginPage loginPage = new LoginPage(driver);

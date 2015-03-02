@@ -1,5 +1,6 @@
-package com.company;
+package com.company.deprecated;
 
+import com.company.BaseTest;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

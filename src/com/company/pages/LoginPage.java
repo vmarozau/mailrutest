@@ -97,7 +97,7 @@ public class LoginPage {
 
         //WebElement message = driver.findElement(By.className("android.widget.Toast"));
         WebElement message = driver.findElement(By.className("android.widget.Toast"));
-        
+
         Ocr.setUp(); // one time setup
         Ocr ocr = new Ocr(); // create a new OCR engine
         ocr.startEngine("eng", Ocr.SPEED_FASTEST); // English
