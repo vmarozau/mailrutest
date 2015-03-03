@@ -24,8 +24,15 @@ public class LoginTest extends CommonBaseTest {
         LoginPage.clearPasswordField(driver);
     }
 
-    //*** won't work for now because of google issue https://github.com/appium/appium/issues/968
+    @Test
+    public void ashouldPassIfLoginButtonDisabled (){
+        LoginPage.fillEmailField("", driver);
+        LoginPage.fillPasswordField("", driver);
+        Assert.assertFalse(LoginPage.isButtonEnabled(driver));
+    }
 
+
+    //*** won't work for now because of google issue https://github.com/appium/appium/issues/968
     @Test(dataProvider = "login-data-provider", dataProviderClass = LoginDataProvider.class)
     public void loginTest (String login, String password, String expectedMessage)
     {

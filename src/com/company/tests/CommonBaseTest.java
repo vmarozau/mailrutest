@@ -51,7 +51,6 @@ public class CommonBaseTest {
         File appDir = new File("/Users/mac-248/Downloads");
         //File appDir = new File("E://Dev");
         File app = new File(appDir, "wikipedia.app");
-        //File app = new File(appDir, "wikipedia.ipa");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
