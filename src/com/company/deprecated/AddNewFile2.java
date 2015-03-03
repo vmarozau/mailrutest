@@ -1,17 +1,12 @@
 package com.company.deprecated;
 
-import com.company.BaseTest;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
-import com.company.Before;
 import org.testng.annotations.Test;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Vyacheslav on 08.02.2015.

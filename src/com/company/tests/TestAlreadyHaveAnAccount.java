@@ -1,11 +1,8 @@
 package com.company.tests;
 
 
-import com.company.BaseTestIOS;
 import com.company.pages.AndroidPages.AndroidLoginPage;
-import com.company.pages.IOSPages.IOSLoginPage;
 import com.company.pages.IOSPages.IOSStartPage;
-import com.company.pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

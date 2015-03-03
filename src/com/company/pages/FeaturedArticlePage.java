@@ -23,7 +23,9 @@ public class FeaturedArticlePage {
     {   //driver.manage().wait(5);
         //driver.wait(5);
         //driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
-        driver.swipe(0,500,500,500,2);
+       // driver.
+        Thread.sleep(7000);
+        driver.swipe(0,900,900,900,100);
 
     }
     public static boolean menuItemsArePresent(AppiumDriver driver)
@@ -34,6 +36,13 @@ public class FeaturedArticlePage {
                 && today.isDisplayed())
             return true;
         else return false;
+
+    }
+    public static void enterTextInSearchField(String query, AppiumDriver driver)
+    {
+        WebElement searchField = driver.findElement(By.name("Search Wikipedia"));
+        searchField.sendKeys(query);
+
 
     }
 }

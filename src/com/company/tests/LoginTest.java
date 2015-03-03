@@ -14,32 +14,27 @@ public class LoginTest extends CommonBaseTest {
     @BeforeTest
     public void setUp2 () {
         StartPage.pressAlreadyHaveAnAccountButton(driver);
-
     }
 
     @BeforeMethod
     public void close2(){
 
-        //probably to be replaced with something universal
+        //probably to be replaced by something universal
         LoginPage.clearEmailField(driver);
         LoginPage.clearPasswordField(driver);
     }
 
-    @Test(dataProvider = "login-data-provider", dataProviderClass = LoginDataProvider.class)
-
     //*** won't work for now because of google issue https://github.com/appium/appium/issues/968
 
+    @Test(dataProvider = "login-data-provider", dataProviderClass = LoginDataProvider.class)
     public void loginTest (String login, String password, String expectedMessage)
     {
         //LoginPage loginPage = new LoginPage(driver);
 
         LoginPage.fillEmailField(login, driver);
-        //
         LoginPage.fillPasswordField(password, driver);
         LoginPage.pressLoginButton(driver);
 
         Assert.assertEquals(LoginPage.getErrorMessageText(driver),expectedMessage);
-
-                //Authintification fail. Check login and password and try again.
     }
 }

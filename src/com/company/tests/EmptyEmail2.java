@@ -1,6 +1,5 @@
 package com.company.tests;
 
-import com.company.BaseTest;
 import com.company.pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
