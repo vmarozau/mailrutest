@@ -1,4 +1,4 @@
-package com.company;
+package com.company.deprecated;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by mac-248 on 2/4/15.
  */
-public class TestAndroidOnMac {
+public class TestIosOnMac {
 
     private WebDriver driver;
 
@@ -31,15 +31,14 @@ public class TestAndroidOnMac {
         File appDir = new File("/Users/mac-248/Downloads");
         //For Windows
         //File appDir = new File("E:/Dev")
-        File app = new File(appDir, "mailrucloud.apk"); //my case “demo1.apk”
+        File app = new File(appDir, "mailrucloud.ipa"); //my case “demo1.apk”
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        //capabilities.setCapability("device", "Android");
 
 
         capabilities.setCapability("browserName", "");
-        capabilities.setCapability("platformVersion", "4.4");
-        capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("deviceName", "Galaxy S4");
+        capabilities.setCapability("platformVersion", "8.1");
+        capabilities.setCapability("platformName", "iOS");
+        capabilities.setCapability("deviceName", "iPhone-023");
         capabilities.setCapability("app", app.getAbsolutePath());
         //capabilities.setCapability("app-package", "{app package name}");  //my case com.gorillalogic.monkeytalk.demo1
         // capabilities.setCapability("app-activity", ".{main activity class}");  //my case RootActivity
