@@ -8,11 +8,11 @@ import org.openqa.selenium.WebDriver;
  */
 public abstract class LoginPageWiki {
 
-    private AppiumDriver driver;
-    public LoginPageWiki(AppiumDriver driver)
-    {
-        this.driver = driver;
-    }
+   // private AppiumDriver driver;
+    //public LoginPageWiki(AppiumDriver driver)
+//    {
+//        this.driver = driver;
+//    }
 
     public abstract boolean isLoginTextPresent (WebDriver driver);
 }

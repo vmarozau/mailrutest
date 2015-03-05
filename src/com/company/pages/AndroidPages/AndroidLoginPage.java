@@ -12,12 +12,12 @@ import org.openqa.selenium.WebElement;
  */
 public class AndroidLoginPage extends LoginPageWiki{
     //private WebDriver driver;
-    public AndroidLoginPage(AppiumDriver driver)
-    {
-        super(driver);
-    }
+//    public AndroidLoginPage(AppiumDriver driver)
+//    {
+//        super(driver);
+//    }
     @Override
-    public boolean isLoginTextPresent (WebDriver driver) {
+    public static boolean isLoginTextPresent (WebDriver driver) {
         WebElement loginText = driver.findElement(By.name("Log in"));
         return loginText.isDisplayed();
 
