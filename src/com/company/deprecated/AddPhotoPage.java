@@ -1,4 +1,4 @@
-package com.company.pages;
+package com.company.deprecated;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;

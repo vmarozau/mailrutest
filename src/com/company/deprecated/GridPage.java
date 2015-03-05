@@ -1,6 +1,5 @@
 package com.company.deprecated;
 
-import com.company.pages.AddPhotoPage;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
