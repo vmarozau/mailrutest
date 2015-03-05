@@ -32,7 +32,7 @@ public class LoginTest extends CommonBaseTest {
     }
 
 
-    //*** won't work for now because of google issue https://github.com/appium/appium/issues/968
+    //*** locators won't work for now because of google issue https://github.com/appium/appium/issues/968
     @Test(dataProvider = "login-data-provider", dataProviderClass = LoginDataProvider.class)
     public void loginTest (String login, String password, String expectedMessage)
     {

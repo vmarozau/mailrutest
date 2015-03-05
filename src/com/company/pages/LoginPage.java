@@ -83,14 +83,17 @@ public class LoginPage {
         return loginbutton.isEnabled();
     }
 
+
+    //*** locators won't work for now because of google issue https://github.com/appium/appium/issues/968
     public static String getErrorMessageText(WebDriver driver) {
 //        WebElement message = driver.findElement(By.id("message"));
 //        return message.getText();
 
-        List<WebElement> message = driver.findElements(By.className("android.widget.TextView"));
-        return message.get(1).getText();
+        List<WebElement> message = driver.findElements(By.className("android.widget.Toast"));
+        //toasts and exclamation messages are not supported, possible solution is getToastMessageText below
+        return message.get(0).getText();
     }
-    //android.widget.Toast
+
     public static String getToastMessageText(WebDriver driver) {
 //        WebElement message = driver.findElement(By.id("message"));
 //        return message.getText();
