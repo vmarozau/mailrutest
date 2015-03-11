@@ -17,7 +17,23 @@ public class SearchResultsPage {
             return true;
         }
         else return false;
-
     }
+
+    public static void tapClearSearchFieldButton(AppiumDriver driver)
+    {
+        WebElement clearButton = driver.findElementByAccessibilityId("Clear query");
+        clearButton.click();
+    }
+    public static void tapSearchResult(String query, AppiumDriver driver)
+    {
+        WebElement neededSearchResult = driver.findElement(By.name(query));
+        neededSearchResult.click();
+    }
+
+    public static void findWordsInSearchField(String query, AppiumDriver driver)
+    {
+        //WebElement
+    }
+
 }
 

@@ -12,9 +12,9 @@ public class QueryDataProvider {
 
 
         return new Object[][]{
-                {"Beer"}
-                //***{"ttt", "testpassword", "Incorrect password"},
-                //{"Wikitestuser2","WikiTestUser", "Login Success!"}//***
+                {"Beer"},
+                {"Android"},
+                {"Google"}
 
         };
     }

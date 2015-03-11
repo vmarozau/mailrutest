@@ -1,6 +1,7 @@
-package com.company.tests;
+package com.company.deprecated;
 
 import com.company.pages.LoginPage;
+import com.company.tests.CommonBaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

@@ -18,26 +18,7 @@ public class FeaturedArticlePage {
         return webView.isDisplayed();
     }
 
-    public static void swipeToOpenLeftMenu(AppiumDriver driver) throws InterruptedException
 
-    {   //driver.manage().wait(5);
-        //driver.wait(5);
-        //driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
-       // driver.
-        Thread.sleep(7000);
-        driver.swipe(0,900,900,900,100);
-
-    }
-    public static boolean menuItemsArePresent(AppiumDriver driver)
-    {
-        WebElement logIn = driver.findElement(By.name("Log in"));
-        WebElement today = driver.findElement(By.name("Today"));
-        if (logIn.isDisplayed()
-                && today.isDisplayed())
-            return true;
-        else return false;
-
-    }
     public static void enterTextInSearchField(String query, AppiumDriver driver)
     {
         WebElement searchField = driver.findElement(By.name("Search Wikipedia"));
