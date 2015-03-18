@@ -3,6 +3,7 @@ package com.company.tests;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
@@ -22,7 +23,7 @@ public class CommonBaseTest {
 
     public AppiumDriver driver;
     //webdriver
-    private String serverURL = "http://127.0.0.1:4723/wd/hub";
+    private String serverURL = "http://127.0.0.1:5955/wd/hub";
     //private String serverURL = "http://127.0.0.1:4723/wd/hub";
 
     //@BeforeTest
