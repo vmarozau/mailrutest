@@ -20,11 +20,14 @@ import java.util.concurrent.TimeUnit;
  */
 public class CommonBaseTest {
 
-    public AppiumDriver driver;
+    public static AppiumDriver driver;
     //webdriver
     private String serverURL = "http://127.0.0.1:4723/wd/hub";
     //private String serverURL = "http://127.0.0.1:4723/wd/hub";
-
+    public static AppiumDriver getDriver()
+    {
+        return driver;
+    }
     //@BeforeTest
     @BeforeSuite
     public void setUp() throws Exception {
