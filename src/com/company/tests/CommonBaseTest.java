@@ -22,9 +22,19 @@ import java.util.concurrent.TimeUnit;
 public class CommonBaseTest {
 
     public AppiumDriver driver;
+
+
     //webdriver
-    private String serverURL = "http://127.0.0.1:5955/wd/hub";
-    //private String serverURL = "http://127.0.0.1:4723/wd/hub";
+    //private String serverURL = "http://127.0.0.1:5955/wd/hub"; //mac
+    //private String serverURL = "http://127.0.0.1:4723/wd/hub"; //acer
+    //private String serverURL;
+    public String getServerURL(){
+        if (System.getProperty("os.name").contains("Windows"))
+        {
+            return "http://127.0.0.1:4723/wd/hub";
+        }
+        else return "http://127.0.0.1:5955/wd/hub";
+    }
 
     //@BeforeTest
     @BeforeSuite
@@ -60,7 +70,7 @@ public class CommonBaseTest {
         capabilities.setCapability("deviceName", "iPhone Simulator");
         capabilities.setCapability("app", app.getAbsolutePath());
 
-        driver = new IOSDriver(new URL(serverURL), capabilities);
+        driver = new IOSDriver(new URL(getServerURL()), capabilities);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
@@ -76,7 +86,7 @@ public class CommonBaseTest {
         capabilities.setCapability("browserName", "");
         capabilities.setCapability("deviceName", "Galaxy S4");
         capabilities.setCapability("app", app.getAbsolutePath());
-        driver = new AndroidDriver(new URL(serverURL), capabilities);
+        driver = new AndroidDriver(new URL(getServerURL()), capabilities);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 

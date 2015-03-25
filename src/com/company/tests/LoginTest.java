@@ -42,6 +42,7 @@ public class LoginTest extends CommonBaseTest {
         LoginPage.fillPasswordField(password, driver);
         LoginPage.pressLoginButton(driver);
 
-        Assert.assertEquals(LoginPage.getErrorMessageText(driver),expectedMessage);
+        //Assert.assertEquals(LoginPage.getErrorMessageText(driver),expectedMessage);
+        Assert.assertTrue(LoginPage.getToastMessageText(driver).contains(expectedMessage));
     }
 }

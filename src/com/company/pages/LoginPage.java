@@ -94,7 +94,7 @@ public class LoginPage {
         return message.get(0).getText();
     }
 
-    public static void getToastMessageText(WebDriver driver) {
+    public static String getToastMessageText(WebDriver driver) {
 //        WebElement message = driver.findElement(By.id("message"));
 //        return message.getText();
 
@@ -105,12 +105,13 @@ public class LoginPage {
         System.out.println("12345 ");
         Ocr.setUp(); // one time setup
         Ocr ocr = new Ocr(); // create a new OCR engine
-        ocr.startEngine("eng", Ocr.SPEED_FASTEST); // English
+        ocr.startEngine("eng", Ocr.SPEED_SLOW); // English
         String s = ocr.recognize(new File[] {new File("jingtest.png")},
                 Ocr.RECOGNIZE_TYPE_ALL, Ocr.OUTPUT_FORMAT_PLAINTEXT);
         System.out.println("Result: " + s);
         ocr.stopEngine();
-        WebElement message = driver.findElement(By.className("android.widget.Toast"));
+        return s;
+        //WebElement message = driver.findElement(By.className("android.widget.Toast"));
         //return message.getText();
     }
 
