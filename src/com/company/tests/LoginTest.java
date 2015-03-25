@@ -4,6 +4,7 @@ import com.company.dataproviders.LoginDataProvider;
 import com.company.pages.LoginPage;
 import com.company.pages.StartPage;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.*;
 
 /**
@@ -26,7 +27,9 @@ public class LoginTest extends CommonBaseTest {
 
     @Test
     public void ashouldPassIfLoginButtonDisabled (){
+        Reporter.log("clearing login");
         LoginPage.fillEmailField("", driver);
+        Reporter.log("clearing password");
         LoginPage.fillPasswordField("", driver);
         Assert.assertFalse(LoginPage.isButtonEnabled(driver));
     }
@@ -37,8 +40,9 @@ public class LoginTest extends CommonBaseTest {
     public void loginTest (String login, String password, String expectedMessage)
     {
         //LoginPage loginPage = new LoginPage(driver);
-
+        Reporter.log("entering login");
         LoginPage.fillEmailField(login, driver);
+        Reporter.log("entering password");
         LoginPage.fillPasswordField(password, driver);
         LoginPage.pressLoginButton(driver);
 

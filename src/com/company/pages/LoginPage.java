@@ -1,12 +1,13 @@
 package com.company.pages;
 
+import com.company.tests.CommonBaseTest;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import com.asprise.ocr.Ocr;
@@ -95,18 +96,36 @@ public class LoginPage {
     }
 
     public static String getToastMessageText(WebDriver driver) {
-//        WebElement message = driver.findElement(By.id("message"));
-//        return message.getText();
 
         //WebElement message = driver.findElement(By.className("android.widget.Toast"));
         //
+        //String filePath = "E:\\SCREENSHOTS\\";
+        //String methodName=result.getName().toString().trim()
+        //public void takeScreenShot() {  //probably to wrap it in some method
+            //get the driver
+            //driver= CommonBaseTest.getDriver();
 
+        try {
+            Thread.sleep(6000); //bad idea, need to wait until spinner is hidden
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
-        System.out.println("12345 ");
+            try {
+                FileUtils.copyFile(scrFile, new File("1.png"));
+
+                //here we let screenshots be overridden if dataprovider is used
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        //this is to be done in separate class/method
         Ocr.setUp(); // one time setup
         Ocr ocr = new Ocr(); // create a new OCR engine
         ocr.startEngine("eng", Ocr.SPEED_SLOW); // English
-        String s = ocr.recognize(new File[] {new File("jingtest.png")},
+        String s = ocr.recognize(new File[] {new File("1.png")},
                 Ocr.RECOGNIZE_TYPE_ALL, Ocr.OUTPUT_FORMAT_PLAINTEXT);
         System.out.println("Result: " + s);
         ocr.stopEngine();

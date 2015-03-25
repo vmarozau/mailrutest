@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class CommonBaseTest {
 
-    public AppiumDriver driver;
+    public static AppiumDriver driver;
 
 
     //webdriver
@@ -35,6 +35,11 @@ public class CommonBaseTest {
         }
         else return "http://127.0.0.1:5955/wd/hub";
     }
+    public static AppiumDriver getDriver()
+        {
+                return driver;
+            }
+
 
     //@BeforeTest
     @BeforeSuite
