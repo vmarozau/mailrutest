@@ -99,16 +99,20 @@ public class LoginPage {
 //        return message.getText();
 
         //WebElement message = driver.findElement(By.className("android.widget.Toast"));
-        WebElement message = driver.findElement(By.className("android.widget.Toast"));
+        //
 
+
+        System.out.println("12345 ");
         Ocr.setUp(); // one time setup
         Ocr ocr = new Ocr(); // create a new OCR engine
-        ocr.startEngine("eng", Ocr.SPEED_FASTEST); // English
-        String s = ocr.recognize(new File[] {new File("test.png")},
+        ocr.startEngine("eng", Ocr.SPEED_SLOW); // English
+        String s = ocr.recognize(new File[] {new File("jingtest.png")},
                 Ocr.RECOGNIZE_TYPE_ALL, Ocr.OUTPUT_FORMAT_PLAINTEXT);
         System.out.println("Result: " + s);
         ocr.stopEngine();
-        return message.getText();
+        return s;
+        //WebElement message = driver.findElement(By.className("android.widget.Toast"));
+        //return message.getText();
     }
 
 //    public static void pressBackButton() {
