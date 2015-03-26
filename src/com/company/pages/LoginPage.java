@@ -1,5 +1,6 @@
 package com.company.pages;
 
+import com.company.ScreenshotHandler;
 import com.company.tests.CommonBaseTest;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
@@ -97,6 +98,15 @@ public class LoginPage {
 
     public static String getToastMessageText(WebDriver driver) {
 
+
+        try {
+            Thread.sleep(6000); //bad idea, need to wait until spinner is hidden
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return ScreenshotHandler.getScreenshotText();
+
+
         //WebElement message = driver.findElement(By.className("android.widget.Toast"));
         //
         //String filePath = "E:\\SCREENSHOTS\\";
@@ -105,33 +115,11 @@ public class LoginPage {
             //get the driver
             //driver= CommonBaseTest.getDriver();
 
-        try {
-            Thread.sleep(6000); //bad idea, need to wait until spinner is hidden
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
-            try {
-                FileUtils.copyFile(scrFile, new File("1.png"));
-
-                //here we let screenshots be overridden if dataprovider is used
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        //this is to be done in separate class/method
-        Ocr.setUp(); // one time setup
-        Ocr ocr = new Ocr(); // create a new OCR engine
-        ocr.startEngine("eng", Ocr.SPEED_SLOW); // English
-        String s = ocr.recognize(new File[] {new File("1.png")},
-                Ocr.RECOGNIZE_TYPE_ALL, Ocr.OUTPUT_FORMAT_PLAINTEXT);
-        System.out.println("Result: " + s);
-        ocr.stopEngine();
-        return s;
         //WebElement message = driver.findElement(By.className("android.widget.Toast"));
         //return message.getText();
+
+
     }
 
 //    public static void pressBackButton() {

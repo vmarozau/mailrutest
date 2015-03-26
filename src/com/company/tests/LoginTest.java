@@ -1,5 +1,6 @@
 package com.company.tests;
 
+import com.company.ScreenshotHandler;
 import com.company.dataproviders.LoginDataProvider;
 import com.company.pages.LoginPage;
 import com.company.pages.StartPage;
@@ -46,7 +47,7 @@ public class LoginTest extends CommonBaseTest {
         LoginPage.fillPasswordField(password, driver);
         LoginPage.pressLoginButton(driver);
 
-        //Assert.assertEquals(LoginPage.getErrorMessageText(driver),expectedMessage);
         Assert.assertTrue(LoginPage.getToastMessageText(driver).contains(expectedMessage));
+        //Assert.assertTrue((driver).contains(expectedMessage));
     }
 }

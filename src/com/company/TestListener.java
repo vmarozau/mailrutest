@@ -5,6 +5,7 @@ package com.company;
  */
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 
 import com.company.tests.CommonBaseTest;
 import org.apache.commons.io.FileUtils;
@@ -17,39 +18,41 @@ import org.testng.ITestResult;
 
 
 public class TestListener implements ITestListener {
-    WebDriver driver=null;
-    String filePath = "E:\\SCREENSHOTS\\";
+
+    private String device = "Samsung Galaxy S4"; //temporarily
+    private int m_count;
+
     @Override
     public void onTestFailure(ITestResult result) {
-        System.out.println("***** Error "+result.getName()+" test has failed *****");
+        log(result.getName() + " - Failed in " + device + " --  " + new Date(System.currentTimeMillis()));
         String methodName=result.getName().toString().trim();
-        takeScreenShot(methodName);
+        ScreenshotHandler.takeScreenShot(methodName);
     }
 
-    public void takeScreenShot(String methodName) {
-        //get the driver
-        driver= CommonBaseTest.getDriver();
-        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        //The below method will save the screen shot in d drive with test method name
-        try {
-            FileUtils.copyFile(scrFile, new File(filePath+methodName+".png"));
 
-            //bad name, with data provider overrides taken screenshots if 2 or more tests fail
-
-            System.out.println("***Placed screenshot in "+filePath+" ***");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     public void onFinish(ITestContext context) {}
 
     public void onTestStart(ITestResult result) {   }
 
-    public void onTestSuccess(ITestResult result) {   }
+    public void onTestSuccess(ITestResult result) {
+        log(result.getName() + " - Passed on " + device + " --  " + new Date(System.currentTimeMillis()));
+    }
 
-    public void onTestSkipped(ITestResult result) {   }
+    public void onTestSkipped(ITestResult result) {
+        log(result.getName() + " - Skipped on " + device + " --  " + new Date(System.currentTimeMillis()));
+    }
 
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {   }
 
     public void onStart(ITestContext context) {   }
+
+    private void log(String string)
+    {
+        System.out.println(string);
+
+        if (++m_count % 40 == 0)
+        {
+            System.out.println("");
+        }
+    }
 }
