@@ -1,5 +1,6 @@
 package com.company.tests;
 
+import com.company.TestLogger;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
@@ -22,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 public class CommonBaseTest {
 
     public static AppiumDriver driver;
-
+    public TestLogger testLogger = new TestLogger();
 
     //webdriver
     //private String serverURL = "http://127.0.0.1:5955/wd/hub"; //mac

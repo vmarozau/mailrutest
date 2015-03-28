@@ -100,7 +100,7 @@ public class LoginPage {
 
 
         try {
-            Thread.sleep(6000); //bad idea, need to wait until spinner is hidden
+            Thread.sleep(10000); //bad idea, need to wait until spinner is hidden
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -126,5 +126,25 @@ public class LoginPage {
 //
 //    }
 
+    public static void clearAllAndroidFields(WebDriver driver)
+
+    {
+        List<WebElement> textFieldsList = driver.findElements(By.className("android.widget.EditText"));
+        int numberOfFields = textFieldsList.size();
+        //for (WebElement aTextFieldsList : textFieldsList) {
+        for (int i=0; i<numberOfFields; i++) {
+
+            System.out.println("getting field " + i);
+            String text = textFieldsList.get(i).getText();
+            int maxChars = text.length();
+            //if (textFieldsList.get(i).)
+            System.out.println("field" + i + " length = " + maxChars);
+            for (int j = 0; j < maxChars; j++) {
+                ((AppiumDriver) driver).sendKeyEvent(67);
+            }
+        }
+    }
 
 }
+
+

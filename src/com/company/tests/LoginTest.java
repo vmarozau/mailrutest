@@ -22,15 +22,18 @@ public class LoginTest extends CommonBaseTest {
     public void close2(){
 
         //probably to be replaced by something universal
-        LoginPage.clearEmailField(driver);
-        LoginPage.clearPasswordField(driver);
+        //LoginPage.clearEmailField(driver);
+       //LoginPage.clearPasswordField(driver);
+        //replaced:
+        LoginPage.clearAllAndroidFields(driver);
     }
 
     @Test
     public void ashouldPassIfLoginButtonDisabled (){
-        Reporter.log("clearing login");
+        testLogger.testStep("1. Clearing Login field");
+        //Reporter.log("clearing login");
         LoginPage.fillEmailField("", driver);
-        Reporter.log("clearing password");
+        //Reporter.log("clearing password");
         LoginPage.fillPasswordField("", driver);
         Assert.assertFalse(LoginPage.isButtonEnabled(driver));
     }
@@ -41,10 +44,14 @@ public class LoginTest extends CommonBaseTest {
     public void loginTest (String login, String password, String expectedMessage)
     {
         //LoginPage loginPage = new LoginPage(driver);
-        Reporter.log("entering login");
+        //Reporter.log("entering login");
+        testLogger.testStep("-- 1. Entering Login");
         LoginPage.fillEmailField(login, driver);
-        Reporter.log("entering password");
+
+       // Reporter.log("entering password");
+        testLogger.testStep("-- 2. Entering password");
         LoginPage.fillPasswordField(password, driver);
+        testLogger.testStep("3. Pressing Login Button");
         LoginPage.pressLoginButton(driver);
 
         Assert.assertTrue(LoginPage.getToastMessageText(driver).contains(expectedMessage));
