@@ -25,9 +25,14 @@ public class SearchResultIsOpened extends CommonBaseTest {
 
     @Test(dataProvider = "query-provider", dataProviderClass = QueryDataProvider.class)
     public void searchResultIsOpened(String query) throws InterruptedException {
+        testLogger.testStep("1. Enter text in Search field");
         FeaturedArticlePage.enterTextInSearchField(query, driver);
+
+        testLogger.testStep("2. Tap Search result");
         SearchResultsPage.tapSearchResult(query, driver);
-        Assert.assertTrue(PagePage.searchResultIsPresentInTitle(query, driver));
+
+        testLogger.testStep("3. Verify that the opened page matches query");
+        Assert.assertTrue(PagePage.searchResultIsPresentInTitle(query, driver), "Search result is not present in title");
 
 
     }

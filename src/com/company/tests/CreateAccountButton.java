@@ -8,6 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.Augmenter;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -18,24 +19,14 @@ import java.io.IOException;
  */
 public class CreateAccountButton extends CommonBaseTest {
 
+    @BeforeTest
+    public void pressCreateAccountButton(){
+        StartPage.pressCreateAccountButton(driver);
+    }
     @Test
     public void pressCreateAccountButtonShouldOpenCreatePage () {
 
-        StartPage.pressCreateAccountButton(driver);
-        Assert.assertEquals(CreateAccountPage.createElementsArePresent(driver), true);
+        Assert.assertEquals(CreateAccountPage.createElementsArePresent(driver), true, "Not all needed elements are found");
 
-        //driver =  new Augmenter().augment(driver);
-        //Get the screenshot
-//        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-//        System.out.println("Screenshot completed");
-//        try {
-//
-//            File testScreenShot = new File("g.png");
-//            //Copy the file to screenshot folder
-//            FileUtils.copyFile(scrFile, testScreenShot);
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
     }
 }

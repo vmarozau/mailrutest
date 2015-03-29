@@ -26,9 +26,13 @@ public class FindVisitedPagesInHistory extends CommonBaseTest {
     public void visitedPagesShouldBeInHistory() throws InterruptedException {
         //FeaturedArticlePage.enterTextInSearchField(query, driver);
         //SearchResultsPage.tapSearchResult(query, driver);
+        testLogger.testStep("1. Swiping right to open left menu");
         PagePage.swipeToOpenLeftMenu(driver);
+
+        testLogger.testStep("2. Tap History button");
         PagePage.pressHistoryButton(driver);
-        Assert.assertTrue(PagePage.areHistoryItemsPresent("Beer", driver));
+
+        Assert.assertTrue(PagePage.areHistoryItemsPresent("Beer", driver), "Result is not found in history");
 
 
     }

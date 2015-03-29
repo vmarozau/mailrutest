@@ -20,7 +20,10 @@ public class SearchResultIsPresent extends CommonBaseTest{
 
     @Test(dataProvider = "query-provider", dataProviderClass = QueryDataProvider.class)
     public void searchResultIsPresent(String query) throws InterruptedException {
+        testLogger.testStep("1. Entering query in search field");
         FeaturedArticlePage.enterTextInSearchField(query, driver);
+
+        testLogger.testStep("2.Verify that entered query is present in Search results page");
         Assert.assertTrue(SearchResultsPage.searchResultIsPresent(query, driver));
 
     }
