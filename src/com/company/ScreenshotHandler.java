@@ -13,14 +13,16 @@ import java.io.IOException;
 /**
  * Created by Vyacheslav on 26.03.2015.
  */
-public class ScreenshotHandler {
+public class ScreenshotHandler extends CommonBaseTest{
 
-    //WebDriver driver=null;
+//    public WebDriver getDriver(){
+//        WebDriver driver = super.driver;
+//    }
     private static String filePath = "E:\\SCREENSHOTS\\"; //bad idea, temporarily
 
-    public static File takeScreenShot(String methodName) { //bad, methodname is not always needed
+    public File takeScreenShot(String methodName) { //bad, methodname is not always needed
         //get the driver
-        WebDriver driver= CommonBaseTest.getDriver();
+        // driver= getDriver();
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         //The below method will save the screen shot in d drive with test method name
         try {
@@ -47,7 +49,7 @@ public class ScreenshotHandler {
         return s;
     }
 
-    public static String getScreenshotText(){
+    public String getScreenshotText(){
         return readAllTextFromScreenshot(takeScreenShot("testtakingscreenshot"));
 
     }

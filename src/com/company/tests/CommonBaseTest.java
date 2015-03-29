@@ -1,5 +1,6 @@
 package com.company.tests;
 
+import com.company.ScreenshotHandler;
 import com.company.TestLogger;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
@@ -22,8 +23,9 @@ import java.util.concurrent.TimeUnit;
  */
 public class CommonBaseTest {
 
-    public static AppiumDriver driver;
+    public AppiumDriver driver;
     public TestLogger testLogger = new TestLogger();
+    public ScreenshotHandler handler = new ScreenshotHandler();
 
     //webdriver
     //private String serverURL = "http://127.0.0.1:5955/wd/hub"; //mac
@@ -36,10 +38,10 @@ public class CommonBaseTest {
         }
         else return "http://127.0.0.1:5955/wd/hub";
     }
-    public static AppiumDriver getDriver()
-        {
-                return driver;
-            }
+    //public static AppiumDriver getDriver()
+//        {
+//                return driver;
+//            }
 
 
     //@BeforeTest

@@ -98,13 +98,14 @@ public class LoginPage {
 
     public static String getToastMessageText(WebDriver driver) {
 
-
+        ScreenshotHandler scr = new ScreenshotHandler();
         try {
             Thread.sleep(10000); //bad idea, need to wait until spinner is hidden
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return ScreenshotHandler.getScreenshotText();
+        String screenshot = scr.getScreenshotText();
+        return screenshot;
 
 
         //WebElement message = driver.findElement(By.className("android.widget.Toast"));
