@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class PagePage {
 
-    public static boolean searchResultIsPresentInTitle(String query, AppiumDriver driver)
+    public static boolean searchResultIsPresentInTitle(String query, WebDriver driver)
     {
         WebElement neededSearchResult = driver.findElement(By.name(query));
         //searchField.sendKeys(query);
@@ -21,17 +21,17 @@ public class PagePage {
         }
         else return false;
     }
-    public static void swipeToOpenLeftMenu(AppiumDriver driver) throws InterruptedException
+    public static void swipeToOpenLeftMenu(WebDriver driver) throws InterruptedException
 
     {   //driver.manage().wait(5);
         //driver.wait(5);
         //driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
         // driver.
         Thread.sleep(7000);
-        driver.swipe(0,900,900,900,100);
+        //driver.swipe(0,900,900,900,100);
 
     }
-    public static boolean menuItemsArePresent(AppiumDriver driver)
+    public static boolean menuItemsArePresent(WebDriver driver)
     {
         WebElement logIn = driver.findElement(By.name("Log in"));
         WebElement today = driver.findElement(By.name("Today"));

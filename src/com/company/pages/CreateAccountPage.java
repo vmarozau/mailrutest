@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
  */
 public class CreateAccountPage {
 
-    public static boolean createElementsArePresent(AppiumDriver driver) {
+    public static boolean createElementsArePresent(WebDriver driver) {
         WebElement createAccountText = driver.findElement(By.name("Create an account"));
         WebElement usernameField = driver.findElement(By.name("Username"));
         //WebElement passwordField = driver.findElement(By.className("android.widget.EditText"));

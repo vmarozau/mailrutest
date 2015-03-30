@@ -19,7 +19,7 @@ public class FeaturedArticlePage {
     }
 
 
-    public static void enterTextInSearchField(String query, AppiumDriver driver)
+    public static void enterTextInSearchField(String query, WebDriver driver)
     {
         WebElement searchField = driver.findElement(By.name("Search Wikipedia"));
         searchField.sendKeys(query);

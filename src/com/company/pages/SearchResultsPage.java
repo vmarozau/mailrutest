@@ -2,6 +2,7 @@ package com.company.pages;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 /**
@@ -9,7 +10,7 @@ import org.openqa.selenium.WebElement;
  */
 public class SearchResultsPage {
 
-    public static boolean searchResultIsPresent(String query, AppiumDriver driver)
+    public static boolean searchResultIsPresent(String query, WebDriver driver)
     {
         WebElement neededSearchResult = driver.findElement(By.name(query));
         //searchField.sendKeys(query);
@@ -19,12 +20,12 @@ public class SearchResultsPage {
         else return false;
     }
 
-    public static void tapClearSearchFieldButton(AppiumDriver driver)
-    {
-        WebElement clearButton = driver.findElementByAccessibilityId("Clear query");
-        clearButton.click();
-    }
-    public static void tapSearchResult(String query, AppiumDriver driver)
+//    public static void tapClearSearchFieldButton(WebDriver driver)
+//    {
+//        WebElement clearButton = driver.findElementByAccessibilityId("Clear query");
+//        clearButton.click();
+//    }
+    public static void tapSearchResult(String query, WebDriver driver)
     {
         WebElement neededSearchResult = driver.findElement(By.name(query));
         neededSearchResult.click();

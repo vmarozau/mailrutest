@@ -52,7 +52,7 @@ public class LoginPage {
         //emailField.sendKeys(email);
         //return this;
     }
-    public static void clearEmailField(AppiumDriver driver) {
+    public static void clearEmailField(WebDriver driver) {
         List<WebElement> textFieldsList = driver.findElements(By.className("android.widget.EditText"));
         //int size = textFieldsList.size();
 
@@ -65,7 +65,7 @@ public class LoginPage {
         //return this;
     }
 
-    public static void clearPasswordField(AppiumDriver driver) {
+    public static void clearPasswordField(WebDriver driver) {
         List<WebElement> textFieldsList = driver.findElements(By.className("android.widget.EditText"));
         //int size = textFieldsList.size();
 
@@ -97,6 +97,7 @@ public class LoginPage {
     }
 
     public static String getToastMessageText(WebDriver driver) {
+        ScreenshotHandler scr = new ScreenshotHandler();
 
 
         try {
@@ -104,7 +105,7 @@ public class LoginPage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return ScreenshotHandler.getScreenshotText();
+        return scr.getScreenshotText();
 
 
         //WebElement message = driver.findElement(By.className("android.widget.Toast"));

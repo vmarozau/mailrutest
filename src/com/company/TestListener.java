@@ -24,9 +24,10 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
+        ScreenshotHandler scr = new ScreenshotHandler();
         log(result.getName() + " - Failed in " + device + " --  " + new Date(System.currentTimeMillis()));
         String methodName=result.getName().toString().trim();
-        ScreenshotHandler.takeScreenShot(methodName);
+        scr.takeScreenShot(methodName);
     }
 
 
