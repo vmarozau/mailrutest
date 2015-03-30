@@ -11,7 +11,7 @@ import org.testng.Reporter;
 
         public void testStep(String text)
         {
-            if (text.startsWith("--  "))
+            if (text.startsWith("1."))
             {
                 addToLog("<b>" + text + "</b>");
             } else

@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import com.asprise.ocr.Ocr;
+import org.testng.Reporter;
 
 /**
  * Created by Vyacheslav on 04.10.2014.
@@ -104,7 +105,7 @@ public class LoginPage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return ScreenshotHandler.getScreenshotText();
+        return ScreenshotHandler.getScreenshotText(Reporter.getCurrentTestResult());
 
 
         //WebElement message = driver.findElement(By.className("android.widget.Toast"));

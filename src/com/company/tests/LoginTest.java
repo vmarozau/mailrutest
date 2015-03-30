@@ -34,7 +34,7 @@ public class LoginTest extends CommonBaseTest {
         testLogger.testStep("1. Clearing Login and password fields");
         LoginPage.clearAllAndroidFields(driver);
         testLogger.testStep("2. Verify that Login button is disabled while all the fields are empty");
-        Assert.assertFalse(LoginPage.isButtonEnabled(driver), "Login button is enabled with empty fields");
+        anAssert.assertFalse(LoginPage.isButtonEnabled(driver), "Login button is enabled with empty fields");
     }
 
 
@@ -54,7 +54,7 @@ public class LoginTest extends CommonBaseTest {
         LoginPage.pressLoginButton(driver);
 
         testLogger.testStep("4. Verify appeared toast message text");
-        Assert.assertTrue(LoginPage.getToastMessageText(driver).contains(expectedMessage),"Expected toast message is not found");
+        anAssert.assertTrue(LoginPage.getToastMessageText(driver).contains(expectedMessage),"Expected toast message is not found");
 
 
     }

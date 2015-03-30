@@ -26,7 +26,7 @@ public class TestListener implements ITestListener {
     public void onTestFailure(ITestResult result) {
         log(result.getName() + " - Failed in " + device + " --  " + new Date(System.currentTimeMillis()));
         String methodName=result.getName().toString().trim();
-        ScreenshotHandler.takeScreenShot(methodName);
+        ScreenshotHandler.takeScreenShot(result);
     }
 
 

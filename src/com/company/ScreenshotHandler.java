@@ -6,6 +6,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,13 +19,13 @@ public class ScreenshotHandler {
     //WebDriver driver=null;
     private static String filePath = "E:\\SCREENSHOTS\\"; //bad idea, temporarily
 
-    public static File takeScreenShot(String methodName) { //bad, methodname is not always needed
+    public static File takeScreenShot(ITestResult result) { //bad, methodname is not always needed
         //get the driver
         WebDriver driver= CommonBaseTest.getDriver();
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         //The below method will save the screen shot in d drive with test method name
         try {
-            FileUtils.copyFile(scrFile, new File(filePath+methodName+".png"));
+            FileUtils.copyFile(scrFile, new File(filePath+result.getName()+".png"));
 
             //bad filename, overrides taken screenshots if 2 or more tests fail in tests with data provider
 
@@ -47,8 +48,8 @@ public class ScreenshotHandler {
         return s;
     }
 
-    public static String getScreenshotText(){
-        return readAllTextFromScreenshot(takeScreenShot("testtakingscreenshot"));
+    public static String getScreenshotText(ITestResult result){
+        return readAllTextFromScreenshot(takeScreenShot(result));
 
     }
 }
