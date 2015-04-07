@@ -38,6 +38,15 @@ public class CommonBaseTest {
         }
         else return "http://127.0.0.1:5955/wd/hub";
     }
+
+    public String getAppPath(){
+        if (System.getProperty("os.name").contains("Windows"))
+        {
+            return "E://Dev";
+        }
+        else return "/Users/mac-248/Downloads";
+    }
+
     public static AppiumDriver getDriver()
         {
                 return driver;
@@ -67,9 +76,9 @@ public class CommonBaseTest {
     }
 
     public void iOSSetup() throws MalformedURLException {
-        File appDir = new File("/Users/mac-248/Downloads");
+        //File appDir = new File("/Users/mac-248/Downloads");
         //File appDir = new File("E://Dev");
-        File app = new File(appDir, "wikipedia.app");
+        File app = new File(getAppPath(), "wikipedia.app");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -83,10 +92,10 @@ public class CommonBaseTest {
     }
 
     public void androidSetup() throws MalformedURLException {
-        File appDir = new File("E://Dev");
+        //File appDir = new File("E://Dev");
         //File appDir = new File("/Users/mac-248/Downloads");
 
-        File app = new File(appDir, "wikipedia2.apk");
+        File app = new File(getAppPath(), "wikipedia2.apk");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 

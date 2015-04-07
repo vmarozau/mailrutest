@@ -572,7 +572,7 @@ jQuery.cookie = function(name, value, options) {
 <body>
 <div id="container">
 <div id="header">
-<div class="time">1 m 14 s</div>
+<div class="time">2 m 0 s</div>
 <h1>LoginTest: <strong><span class="total">4 total, </span><span class="failed">2 failed, </span><span class="passed">2 passed</span></strong>
 </h1>
 <div id="treecontrol">
@@ -591,44 +591,44 @@ jQuery.cookie = function(name, value, options) {
 <ul id="tree">
 <li xmlns="" class="level top failed open">
 <span><em class="time">
-<div class="time">1 m 14 s</div>
+<div class="time">2 m 0 s</div>
 </em>com.company.tests</span>
 <ul>
 <li class="level suite failed open">
 <span><em class="time">
-<div class="time">1 m 14 s</div>
+<div class="time">2 m 0 s</div>
 </em>LoginTest</span>
 <ul>
 <li class="level test">
 <span><em class="time">
-<div class="time">6.93 s</div>
+<div class="time">273 ms</div>
 </em><em class="status">passed</em>ashouldPassIfLoginButtonDisabled</span>
 <ul>
 <li class="text">
-<span class="stdout">ashouldPassIfLoginButtonDisabled - Passed on Samsung Galaxy S4 --  Sat Mar 28 16:01:09 BRT 2015<br/></span>
+<span class="stdout">getting field 0<br/>field0 length = 8<br/>getting field 1<br/>field1 length = 0<br/>ashouldPassIfLoginButtonDisabled - Passed on Samsung Galaxy S4 --  Tue Mar 31 12:14:56 FET 2015<br/>getting field 0<br/>field0 length = 8<br/>getting field 1<br/></span>
 </li>
 </ul>
 </li>
 <li class="level test">
 <span><em class="time">
-<div class="time">28.61 s</div>
+<div class="time">39.17 s</div>
 </em><em class="status">passed</em>loginTest ("tgtkjdfhjkhkj", "testpassword", "Incorrect username")</span>
 <ul>
 <li class="text">
-<span class="stdout">***Placed screenshot in E:\SCREENSHOTS\ ***<br/>Written to: C:\Users\VYACHE~1\AppData\Local\Temp\aocr_x64.dll<br/>Result: Facebook 22:01 I<br/>You have 6 new notifications, 1 messag..<br/> <br/>tgtkjdfhjkhkj 0<br/> <br/>   <br/>Incorrect username<br/>Don&#39;t have an account? Join Wikipedia<br/>tgtkjdfhjkhkj Hel&#39;lpaBl/IJ&#39;IbHO npenynpenMT<br/>MuyKeHrmm3x1:<br/>quIBanponAma<br/>GHHCMMTbGIOQ<br/>J&quot; ?123<br/> <br/>I<br/>loginTest - Passed on Samsung Galaxy S4 --  Sat Mar 28 16:01:44 BRT 2015<br/></span>
+<span class="stdout">field1 length = 0<br/>***Placed screenshot in E:\SCREENSHOTS\ ***<br/>NOTICE: this evaluation version replaces all recognized &#39;q&#39; and &#39;x&#39; occurrences with asterisk (&#39;*&#39;).<br/>Result:  <br/>6 Login to Wikipedia<br/>Usernametgtkjdfhjkhkjl<br/> <br/> <br/>o o o o o o o o o o 0 0 Incorrect username<br/>Don&#39;t have an account? Join Wikipedia<br/>asdfghjkl<br/>Az*cvbnmfl<br/>7123 , _ o<br/>loginTest - Passed on Samsung Galaxy S4 --  Tue Mar 31 12:15:35 FET 2015<br/>getting field 0<br/>field0 length = 21<br/>getting field 1<br/>field1 length = 0<br/></span>
 </li>
 </ul>
 </li>
 <li class="level test failed open">
 <span><em class="time">
-<div class="time">17.90 s</div>
+<div class="time">39.75 s</div>
 </em><em class="status">failed</em>loginTest ("ttt", "testpassword", "Incorrect password")</span>
 <ul>
 <li class="text">
-<span class="stdout">***Placed screenshot in E:\SCREENSHOTS\ ***<br/>Result: n A 22102 ”B‘§k‘§ ° A 49%<br/>6 Login to Wikipedia<br/>tttlgtkjdfhjkhkj<br/>Incorrect username<br/> <br/>HenpeprBHoro HapaflOKCE<br/>v<br/>MuyKeHrmm3x1:<br/>deIBanponAma<br/>OHHCMMTbGIOQ<br/>j<br/>‘ ?123 . Next<br/>I<br/>loginTest - Failed in Samsung Galaxy S4 --  Sat Mar 28 16:02:07 BRT 2015<br/></span>
+<span class="stdout">***Placed screenshot in E:\SCREENSHOTS\ ***<br/>NOTICE: this evaluation version replaces all recognized &#39;q&#39; and &#39;x&#39; occurrences with asterisk (&#39;*&#39;).<br/>Result:  <br/>6 Login to Wikipedia<br/>Usernametttl<br/>o o o o o o o o o o 0 0 Incorrect username<br/>Don&#39;t have an account? Join Wikipedia<br/> <br/>asdfghjkl<br/>Az*cvbnmfl<br/>7123 , _ o<br/></span>
 </li>
 <li class="text">
-<span class="stderr">java.lang.AssertionError: <br/></span>
+<span class="stderr">java.lang.AssertionError: Expected toast message is not found <br/></span>
 </li>
 <li class="text">
 <span class="stdout">Expected :<br/></span>
@@ -640,23 +640,23 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">Actual   :<br/></span>
 </li>
 <li class="text">
-<span class="stderr">false<br/>  <br/><br/>	at org.testng.Assert.fail(Assert.java:94)<br/>	at org.testng.Assert.failNotEquals(Assert.java:494)<br/>	at org.testng.Assert.assertTrue(Assert.java:42)<br/>	at org.testng.Assert.assertTrue(Assert.java:52)<br/>	at com.company.tests.LoginTest.loginTest(LoginTest.java:55)<br/></span>
+<span class="stderr">false<br/>  <br/>	at org.testng.Assert.fail(Assert.java:94)<br/>	at org.testng.Assert.failNotEquals(Assert.java:494)<br/>	at org.testng.Assert.assertTrue(Assert.java:42)<br/>	at com.company.NewAssert.assertTrue(NewAssert.java:38)<br/>	at com.company.tests.LoginTest.loginTest(LoginTest.java:57)<br/></span>
 </li>
 <li class="text">
-<span class="stdout">***Placed screenshot in E:\SCREENSHOTS\ ***<br/></span>
+<span class="stdout">***Placed screenshot in E:\SCREENSHOTS\ ***<br/>loginTest - Failed in Samsung Galaxy S4 --  Tue Mar 31 12:16:26 FET 2015<br/>***Placed screenshot in E:\SCREENSHOTS\ ***<br/>getting field 0<br/>field0 length = 11<br/>getting field 1<br/></span>
 </li>
 </ul>
 </li>
 <li class="level test failed open">
 <span><em class="time">
-<div class="time">20.44 s</div>
+<div class="time">41.17 s</div>
 </em><em class="status">failed</em>loginTest ("Wikitestuser2", "WikiTestUser", "Login Success!")</span>
 <ul>
 <li class="text">
-<span class="stdout">***Placed screenshot in E:\SCREENSHOTS\ ***<br/>Result: n A 22102 ”B‘§k‘§ ° A 49%<br/>6 Login to Wikipedia<br/>WikitestuserZItgtkjdfhjkhkj<br/>Incorrect username<br/> <br/>v<br/>MuyKeHrmm3x1:<br/>deIBanponAma<br/>GHHCMMTbGIOQ<br/>j<br/>‘ ?123 Next<br/>I<br/></span>
+<span class="stdout">field1 length = 0<br/>***Placed screenshot in E:\SCREENSHOTS\ ***<br/>NOTICE: this evaluation version replaces all recognized &#39;q&#39; and &#39;x&#39; occurrences with asterisk (&#39;*&#39;).<br/>Result:  <br/>6 Login to Wikipedia<br/>UsernameWikitestuserZ 0<br/>o o o o o o o o o o 0 0 Incorrect username<br/>Don&#39;t have an account? Join Wikipedia<br/> <br/>asdfghjkl<br/>éz*cvbnmfl<br/>?123 , _ o<br/>***Placed screenshot in E:\SCREENSHOTS\ ***<br/></span>
 </li>
 <li class="text">
-<span class="stderr">java.lang.AssertionError: <br/></span>
+<span class="stderr">java.lang.AssertionError: Expected toast message is not found <br/></span>
 </li>
 <li class="text">
 <span class="stdout">Expected :<br/></span>
@@ -668,10 +668,16 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">Actual   :<br/></span>
 </li>
 <li class="text">
-<span class="stderr">false<br/>  <br/><br/>	at org.testng.Assert.fail(Assert.java:94)<br/>	at org.testng.Assert.failNotEquals(Assert.java:494)<br/>	at org.testng.Assert.assertTrue(Assert.java:42)<br/>	at org.testng.Assert.assertTrue(Assert.java:52)<br/>	at com.company.tests.LoginTest.loginTest(LoginTest.java:55)<br/></span>
+<span class="stderr">false<br/>  <br/></span>
 </li>
 <li class="text">
-<span class="stdout">loginTest - Failed in Samsung Galaxy S4 --  Sat Mar 28 16:02:35 BRT 2015<br/>***Placed screenshot in E:\SCREENSHOTS\ ***<br/></span>
+<span class="stdout">loginTest - Failed in Samsung Galaxy S4 --  Tue Mar 31 12:17:13 FET 2015<br/></span>
+</li>
+<li class="text">
+<span class="stderr">	at org.testng.Assert.fail(Assert.java:94)<br/>	at org.testng.Assert.failNotEquals(Assert.java:494)<br/>	at org.testng.Assert.assertTrue(Assert.java:42)<br/>	at com.company.NewAssert.assertTrue(NewAssert.java:38)<br/>	at com.company.tests.LoginTest.loginTest(LoginTest.java:57)<br/></span>
+</li>
+<li class="text">
+<span class="stdout">***Placed screenshot in E:\SCREENSHOTS\ ***<br/></span>
 </li>
 </ul>
 </li>
@@ -683,7 +689,7 @@ jQuery.cookie = function(name, value, options) {
 </div>
 </div>
 <div id="footer">
-<p>Generated by IntelliJ IDEA on 28.03.15 16:13</p>
+<p>Generated by IntelliJ IDEA on 3/31/15 12:20 PM</p>
 </div>
 </body>
 </html>

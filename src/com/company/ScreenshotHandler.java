@@ -17,6 +17,7 @@ import java.io.IOException;
 public class ScreenshotHandler {
 
     //WebDriver driver=null;
+
     private static String filePath = "E:\\SCREENSHOTS\\"; //bad idea, temporarily
 
     public static File takeScreenShot(ITestResult result) { //bad, methodname is not always needed

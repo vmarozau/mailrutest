@@ -53,7 +53,7 @@ public class LoginTest extends CommonBaseTest {
         testLogger.testStep("3. Pressing Login Button");
         LoginPage.pressLoginButton(driver);
 
-        testLogger.testStep("4. Verify appeared toast message text");
+        testLogger.testStep("4. Verify that appeared toast message text matches expected message");
         anAssert.assertTrue(LoginPage.getToastMessageText(driver).contains(expectedMessage),"Expected toast message is not found");
 
 
